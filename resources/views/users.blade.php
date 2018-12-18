@@ -1,4 +1,4 @@
-<!docttype <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -9,12 +9,21 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <h1><?= e($title)?></h1>
+    <h1>{{ $title }}</h1>
 
-    <ul>
-    <?php foreach ($users as $user): ?>
-        <li><?= e($user) ?></li>
-    <?php endforeach; ?>
-    </ul>
+    <hr>
+
+    @empty($users)
+        <ul>
+        @foreach ($users as $user) 
+            <li>{{ $user }}</li>
+        @endforeach
+        </ul>
+    @else
+        <p>No hay usuarios registrados</p>
+    @endempty
+    
+    {{ time() }}
+
 </body>
-</html>>
+</html>
