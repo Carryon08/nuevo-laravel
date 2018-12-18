@@ -14,20 +14,21 @@ class UserController extends Controller
             $users = [];
         }
         else{
-        $users = [
-            'joel','juan','pepe','billy',
-        ];
+            $users = [
+                'joel','juan','pepe','billy',
+            ];
+      
         }
         $title='Listado de usuarios';
         
-        return view('users', compact('title','users'));
+        return view('users.index', compact('title','users'));
     }
     public function show($id)
     {
-        request('data');
+        
         $title = 'Detalle de uruario';
 
-        return view('UserDetail', compact('title','id'));
+        return view('users.Detail', compact('title','id'));
     }
     public function create()
     {
