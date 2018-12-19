@@ -29,7 +29,7 @@ class ProfessionSeeder extends Seeder
         //    'title' => 'Desarrollador back-end',
         //]);
 
-
+        factory(\App\Profession::class)->times(10)->create();
 
     }
 }
