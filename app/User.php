@@ -30,6 +30,7 @@ class User extends Authenticatable
 
     public function profession()//profession_id
     {
-        return $this->belongsTo(Profession::class);
+        return $this->belongsTo(Profession::class);//relación un modelo con otro
+                                                //retornan el modelo o null si no existe 
     }
 }
