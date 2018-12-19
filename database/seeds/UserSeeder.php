@@ -13,11 +13,18 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        //$professions = DB::select('SELECT id FROM professions WHERE title = ?',['Desarrollador back-end']);
+        $professionId = DB::table('professions')
+        ->where('title','Desarrollador back-end')
+        ->value('id');
+       // dd($profession->id);professions[0]
+
         DB::table('users')->insert([
             'name' => 'Roberto Carreon',
             'email' => 'roberto.carreon@cceo.com.mx',
             'password' => bcrypt('admin'),
+            'profession_id' =>$professionId,
 
-        ]); 
+        ]);
     }
 }
