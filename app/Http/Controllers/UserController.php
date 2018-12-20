@@ -30,17 +30,17 @@ class UserController extends Controller
 
         return view('users.index', compact('title','users'));
     }
-    public function show($id)
+    public function show(User $user)
     {
 
         //$title = 'Detalle de uruario';
 
-        $user = User::findOrFail($id);
+        //$user = User::findOrFail($id);
 
         // if($user==null)
         // {
         //     return view('erros.404');
-        // }
+        // } este if ayuda si solo de usa el helper find sin tener findOrFail
 
         return view('users.Detail', compact('user'));
     }
