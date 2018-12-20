@@ -12,6 +12,10 @@ Route::get('/usuarios/{user}', 'UserController@show')
     ->where('user', '[0-9]+')
     ->name('users.show');
 Route::get('/usuarios/nuevo', 'UserController@create')
-    ->name('users.nuevo');
+    ->name('users.create');
+
+Route::post('/usuarios/crear', 'UserController@store')
+    ->name('users.crear');
+
 Route::get('/saludo/{name}/{nickname?}', 'WelcomeUserController')
     ->name('inicioLaravel');
