@@ -35,10 +35,18 @@ class UserController extends Controller
 
         //$title = 'Detalle de uruario';
 
-        $user = User::find($id);
+        $user = User::findOrFail($id);
+
+        // if($user==null)
+        // {
+        //     return view('erros.404');
+        // }
 
         return view('users.Detail', compact('user'));
     }
+
+
+
     public function create()
     {
         return 'Crear nuevo usuario';
