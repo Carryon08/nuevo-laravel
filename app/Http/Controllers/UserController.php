@@ -52,11 +52,17 @@ class UserController extends Controller
         return view('users.create');
     }
 
-    public function store(Request $request)
+    public function store()
     {
 
-        $data = $request->all();
+        $data = request()->validate ([
+            'name' => 'required'
+        ],[
+            'name.required' => 'El campo nombre es obligatorio'
 
+        ]);
+
+        $data = request()->all();
         User::create([
             'name' => $data['name'],
             'email' => $data['email'],
