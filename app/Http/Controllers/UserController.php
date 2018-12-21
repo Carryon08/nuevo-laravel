@@ -62,7 +62,7 @@ class UserController extends Controller
 
         ]);
 
-        $data = request()->all();
+        //$data = request()->all();
         User::create([
             'name' => $data['name'],
             'email' => $data['email'],
