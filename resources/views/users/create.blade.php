@@ -28,9 +28,15 @@
 <br>
             <label for="email">Correo:</label>
             <input type="email" name="email" id="email" placeholder="algo@algo.com" value="{{ old('email')}}">
+            @if ($errors->has('email'))
+                <p>{{$errors->first('email')}}</p>
+            @endif
 <br>
             <label for="password">Contraseña:</label>
             <input type="password" name="password" id="password" placeholder="Mas de 6 caracteres">
+            @if ($errors->has('password'))
+                <p>{{$errors->first('password')}}</p>
+            @endif
             <br>
 
             <button type="submit">Crear usuario</button>
