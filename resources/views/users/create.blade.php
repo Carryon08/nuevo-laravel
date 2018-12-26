@@ -9,11 +9,11 @@
         @if ($errors->any)
         <div class="alert alert-danger">
             <h6>Corregir los siguientes errores</h6>
-            {{-- <ul>
+            <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
-            </ul> --}}
+            </ul>
         </div>
         @endif
 
@@ -22,21 +22,21 @@
 
             <label for="name">Nombre:</label>
             <input type="text" name="name" id="name" placeholder="Nombre Apellido" value="{{ old('name')}}">
-            @if ($errors->has('name'))
+            {{-- @if ($errors->has('name'))
                 <p>{{$errors->first('name')}}</p>
-            @endif
+            @endif --}}
 <br>
             <label for="email">Correo:</label>
             <input type="email" name="email" id="email" placeholder="algo@algo.com" value="{{ old('email')}}">
-            @if ($errors->has('email'))
+            {{-- @if ($errors->has('email'))
                 <p>{{$errors->first('email')}}</p>
-            @endif
+            @endif --}}
 <br>
             <label for="password">Contraseña:</label>
             <input type="password" name="password" id="password" placeholder="Mas de 6 caracteres">
-            @if ($errors->has('password'))
+            {{-- @if ($errors->has('password'))
                 <p>{{$errors->first('password')}}</p>
-            @endif
+            @endif --}}
             <br>
 
             <button type="submit">Crear usuario</button>
